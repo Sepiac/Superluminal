@@ -22,17 +22,16 @@ var getCommand = function() {
     var currentCommand = result.command.split(' ')[1];
     var currentArgument = result.command.split(' ')[2];
 
-    try {
-      ship.systems[currentSystem][currentCommand](ship, currentArgument);
-    } catch (err){
-      console.log(err);
-      //console.log('Ship command not found.');
-    };
-
-
-    if (currentCommand !== 'exit' && currentSystem !== 'exit') {
+    if (currentSystem !== 'exit') {
+      try {
+        ship.systems[currentSystem][currentCommand](ship, currentArgument);
+      } catch (err){
+        console.log(err);
+        //console.log('Ship command not found.');
+      };
       getCommand();
     }
+
   });
   prompt.resume();
 };
