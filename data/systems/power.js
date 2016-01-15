@@ -3,7 +3,6 @@
 var powerSystem = {};
 
 powerSystem.name = 'power';
-powerSystem.energy = 100;
 powerSystem.activated = false;
 
 powerSystem.activate = function() {
