@@ -5,10 +5,15 @@ var navigationSystem = {};
 
 navigationSystem.name = 'navigation';
 navigationSystem.activated = false;
+navigationSystem.requiredEnergy = 3;
 
-navigationSystem.activate = function() {
-  navigationSystem.activated = true;
-  console.log('Navigation system activated.');
+navigationSystem.activate = function(ship) {
+  if(ship.getAvailableEnergy() >= navigationSystem.requiredEnergy) {
+    navigationSystem.activated = true;
+    console.log('Navigation system activated.');
+  } else {
+    console.log('Insufficient energy to activate navigation system.');
+  }
 };
 
 navigationSystem.shutdown = function() {

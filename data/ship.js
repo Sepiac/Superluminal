@@ -16,4 +16,16 @@ ship.status = function() {
   }
 }
 
+ship.getAvailableEnergy = function() {
+  var amountOfUsedEnergy = 0;
+
+  for(var system in ship.systems) {
+    var currentSystem = ship.systems[system];
+    if(currentSystem.activated && currentSystem.requiredEnergy) {
+      amountOfUsedEnergy += currentSystem.requiredEnergy;
+    }
+  }
+  return ship.energy - amountOfUsedEnergy;
+}
+
 module.exports = ship;
