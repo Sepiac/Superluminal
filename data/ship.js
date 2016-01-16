@@ -10,6 +10,7 @@ ship.energy = 0;
 ship.systems = {};
 
 ship.status = function() {
+  console.log('Energy: ' + ship.energy);
   for (var system in ship.systems) {
     var currentSystem = ship.systems[system];
     console.log(currentSystem.name + (currentSystem.activated ? '*':''));
