@@ -24,7 +24,11 @@ var getCommand = function() {
 
     if (currentSystem !== 'exit') {
       try {
-        ship.systems[currentSystem][currentCommand](ship, currentArgument);
+        if(ship.systems[currentSystem].activated) {
+          ship.systems[currentSystem][currentCommand](ship, currentArgument);
+        } else {
+          console.log(ship.systems[currentSystem].name + " is not activated.");
+        }
       } catch (err){
         console.log(err);
         //console.log('Ship command not found.');
