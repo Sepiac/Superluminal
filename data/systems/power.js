@@ -4,6 +4,7 @@ var powerSystem = {};
 
 powerSystem.name = 'power';
 powerSystem.activated = false;
+powerSystem.requiredEnergy = 0;
 powerSystem.energy = 5;
 
 powerSystem.activate = function(ship) {
