@@ -6,7 +6,7 @@ ship.name = 'ship';
 ship.location = {};
 ship.activated = true;
 
-ship.energy = 5;
+ship.energy = 0;
 ship.systems = {};
 
 ship.status = function() {
