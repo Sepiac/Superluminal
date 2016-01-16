@@ -7,14 +7,17 @@ ship.location = {};
 ship.activated = true;
 
 ship.energy = 0;
+ship.requiredEnergy = 0;
 ship.systems = {};
 
 ship.status = function() {
-  console.log('Energy: ' + ship.energy);
+  console.log('=========================================');
+  console.log('Energy Available: ' + ship.getAvailableEnergy() + '/' + ship.energy);
   for (var system in ship.systems) {
     var currentSystem = ship.systems[system];
-    console.log(currentSystem.name + (currentSystem.activated ? '*':''));
+    console.log(currentSystem.name + '(' + currentSystem.requiredEnergy + ')' +(currentSystem.activated ? '*':''));
   }
+  console.log('=========================================');
 }
 
 ship.getAvailableEnergy = function() {
