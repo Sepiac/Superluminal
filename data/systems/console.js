@@ -6,9 +6,13 @@ consoleSystem.name = 'Console';
 consoleSystem.activated = false;
 consoleSystem.requiredEnergy = 3;
 
-consoleSystem.activate = function() {
-  consoleSystem.activated = true;
-  console.log('Console system activated.');
+consoleSystem.activate = function(ship) {
+  if(ship.getAvailableEnergy() >= consoleSystem.requiredEnergy) {
+    consoleSystem.activated = true;
+    console.log('Console system activated.');
+  } else {
+    console.log('Insufficient energy to activate console system.');
+  }
 };
 
 consoleSystem.shutdown = function() {
