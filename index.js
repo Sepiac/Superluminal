@@ -24,7 +24,7 @@ var getCommand = function() {
 
     if (currentSystem !== 'exit') {
       try {
-        if(ship.systems[currentSystem].activated) {
+        if(ship.systems[currentSystem].activated || currentCommand === 'activate') {
           ship.systems[currentSystem][currentCommand](ship, currentArgument);
         } else {
           console.log(ship.systems[currentSystem].name + " is not activated.");
