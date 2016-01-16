@@ -2,7 +2,7 @@
 
 var scannerSystem = {};
 
-scannerSystem.name = 'scanner';
+scannerSystem.name = 'Scanner';
 scannerSystem.activated = false;
 
 scannerSystem.activate = function() {

@@ -3,7 +3,7 @@ var locations = require('../locations');
 
 var navigationSystem = {};
 
-navigationSystem.name = 'navigation';
+navigationSystem.name = 'Navigation';
 navigationSystem.activated = false;
 navigationSystem.requiredEnergy = 3;
 

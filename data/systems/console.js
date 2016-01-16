@@ -2,7 +2,7 @@
 
 var consoleSystem = {};
 
-consoleSystem.name = 'console';
+consoleSystem.name = 'Console';
 consoleSystem.activated = false;
 consoleSystem.requiredEnergy = 3;
 

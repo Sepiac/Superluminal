@@ -2,7 +2,7 @@
 
 var ship = {};
 
-ship.name = 'ship';
+ship.name = 'Ship';
 ship.location = {};
 ship.activated = true;
 

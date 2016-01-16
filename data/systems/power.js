@@ -2,7 +2,7 @@
 
 var powerSystem = {};
 
-powerSystem.name = 'power';
+powerSystem.name = 'Power';
 powerSystem.activated = false;
 powerSystem.requiredEnergy = 0;
 powerSystem.energy = 5;
