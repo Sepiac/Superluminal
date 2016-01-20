@@ -11,10 +11,6 @@ ship.location = locations.Sol;
 
 var prompt = require('prompt');
 
-var runCommand = function() {
-
-};
-
 var getCommand = function() {
   prompt.start();
   prompt.get(['command'], function(err, result) {
