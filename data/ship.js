@@ -18,7 +18,7 @@ ship.status = function() {
     console.log(currentSystem.name + '(' + currentSystem.requiredEnergy + ')' +(currentSystem.activated ? '*':''));
   }
   console.log('=========================================');
-}
+};
 
 ship.getAvailableEnergy = function() {
   var amountOfUsedEnergy = 0;
@@ -30,6 +30,6 @@ ship.getAvailableEnergy = function() {
     }
   }
   return ship.energy - amountOfUsedEnergy;
-}
+};
 
 module.exports = ship;
