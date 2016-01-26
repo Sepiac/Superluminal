@@ -11,6 +11,13 @@ ship.location = locations.Sol;
 
 var prompt = require('prompt');
 
+for (var system in ship.systems) {
+  var currentSystem = ship.systems[system];
+  if(currentSystem.shipCallBacks) {
+    ship.callBacks = ship.callBacks.concat(currentSystem.shipCallBacks);
+  }
+}
+
 var getCommand = function() {
   prompt.start();
   prompt.get(['command'], function(err, result) {
@@ -18,7 +25,11 @@ var getCommand = function() {
     var currentCommand = result.command.split(' ')[1];
     var currentArgument = result.command.split(' ')[2];
 
-    if (currentSystem !== 'exit') {
+    if (currentSystem !== 'exit' && ship.health > 0) {
+      for(var callBack in ship.callBacks) {
+        var currentCallBack = ship.callBacks[callBack];
+        currentCallBack(ship);
+      }
       try {
         if(ship.systems[currentSystem].activated || currentCommand === 'activate') {
           ship.systems[currentSystem][currentCommand](ship, currentArgument);
@@ -29,6 +40,8 @@ var getCommand = function() {
         console.log(err);
         //console.log('Ship command not found.');
       };
+
+
       getCommand();
     }
 
