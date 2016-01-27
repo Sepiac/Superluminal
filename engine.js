@@ -8,6 +8,9 @@ engine.run = function(campaignName) {
   var campaign = require('./' + campaignName);
 
   var ship = campaign.ship;
+  ship.systems = campaign.systems;
+  ship.systems.ship = ship;
+  ship.location = campaign.startLocation;
 
   for (var system in ship.systems) {
     var currentSystem = ship.systems[system];
