@@ -2,7 +2,7 @@
   "name": "sl",
   "version": "1.0.0",
   "description": "Text based exploration game",
-  "main": "index.js",
+  "main": "Superluminal.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
