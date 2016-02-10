@@ -10,5 +10,8 @@ sol.adjacentSystems = [
   'Alpha_Centauri'
 ];
 
+sol.resources = {
+  energy: 5
+};
 
 module.exports = sol;
