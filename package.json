@@ -9,6 +9,7 @@
   "author": "Dane Russell",
   "license": "MIT",
   "dependencies": {
+    "lodash": "^4.3.0",
     "prompt": "^0.2.14"
   }
 }
