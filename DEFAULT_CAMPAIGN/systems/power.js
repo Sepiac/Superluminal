@@ -1,4 +1,5 @@
 'use strict';
+var _ = require('lodash');
 
 var powerSystem = {};
 
@@ -16,6 +17,13 @@ powerSystem.activate = function(ship) {
 powerSystem.shutdown = function(ship) {
   powerSystem.activated = false;
   ship.energy = 0;
+
+  _.each(ship.systems, function(system) {
+    if(system.name !== 'Power' && system.name !== 'Ship' && system.activated) {
+      system.shutdown(ship);
+    }
+  });
+
   console.log('Power system deactivated.');
 };
 
