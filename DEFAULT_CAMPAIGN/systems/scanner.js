@@ -17,7 +17,11 @@ scannerSystem.shutdown = function() {
 };
 
 scannerSystem.survey = function(ship) {
-  ship.energy += ship.location.resources.energy || 0;
+
+  if(ship.location.resources.energy) {
+    ship.systems.power.energy += ship.location.resources.energy;
+    console.log('Power acquired. Please cycle power system to use it.');
+  }
   ship.food += ship.location.resources.food || 0;
   ship.health += ship.location.resources.health || 0;
 };

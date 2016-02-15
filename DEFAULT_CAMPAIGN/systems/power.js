@@ -27,4 +27,9 @@ powerSystem.shutdown = function(ship) {
   console.log('Power system deactivated.');
 };
 
+powerSystem.cycle = function(ship) {
+  powerSystem.shutdown(ship);
+  powerSystem.activate(ship);
+};
+
 module.exports = powerSystem;
