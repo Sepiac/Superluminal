@@ -8,9 +8,13 @@ lifeSupportSystem.activated = false;
 lifeSupportSystem.maxOxygen = 10;
 lifeSupportSystem.minOxygen = 0;
 
-lifeSupportSystem.activate = function() {
-  lifeSupportSystem.activated = true;
-  console.log('Life support system activated.');
+lifeSupportSystem.activate = function(ship) {
+  if(ship.getAvailableEnergy() >= lifeSupportSystem.requiredEnergy) {
+    lifeSupportSystem.activated = true;
+    console.log('Life support system activated.');
+  } else {
+    console.log('Insufficient energy to activate life support system.');
+  }
 };
 
 lifeSupportSystem.shutdown = function() {
