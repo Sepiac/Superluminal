@@ -1,4 +1,5 @@
 'use strict';
 
 var engine = require('./engine');
-engine.run(process.argv[2] || 'DEFAULT_CAMPAIGN');
+engine.init(process.argv[2] || 'DEFAULT_CAMPAIGN');
+engine.loop();

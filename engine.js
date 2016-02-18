@@ -1,16 +1,15 @@
 'use strict';
+var prompt = require('prompt');
 
 var engine = {};
 
-engine.run = function(campaignName) {
-  var prompt = require('prompt');
+engine.init = function(campaignName) {
+  engine.campaign = require('./' + campaignName);
 
-  var campaign = require('./' + campaignName);
-
-  var ship = campaign.ship;
-  ship.systems = campaign.systems;
+  var ship = engine.campaign.ship;
+  ship.systems = engine.campaign.systems;
   ship.systems.ship = ship;
-  ship.location = campaign.startLocation;
+  ship.location = engine.campaign.startLocation;
 
   for (var system in ship.systems) {
     var currentSystem = ship.systems[system];
@@ -18,8 +17,15 @@ engine.run = function(campaignName) {
       ship.callBacks = ship.callBacks.concat(currentSystem.shipCallBacks);
     }
   }
+};
+
+engine.loop = function() {
+
+  
 
   var getCommand = function() {
+
+    var ship = engine.campaign.ship;
     prompt.start();
     prompt.get(['command'], function(err, result) {
       var currentSystem = result.command.split(' ')[0];
