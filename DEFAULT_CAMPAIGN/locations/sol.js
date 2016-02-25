@@ -9,7 +9,8 @@ sol.energy = 10;
 sol.adjacentSystems = [
   'Alpha_Centauri',
   'Belmarion',
-  'Xantu'
+  'Xantu',
+  'Tryggh'
 ];
 
 sol.resources = {
