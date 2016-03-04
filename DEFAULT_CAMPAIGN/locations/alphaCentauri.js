@@ -6,7 +6,6 @@ alphaCentauri.description = 'A collection of small, green islands, Populated by 
 
 alphaCentauri.adjacentSystems = [
   'Sol'
-]
-
+];
 
 module.exports = alphaCentauri;
